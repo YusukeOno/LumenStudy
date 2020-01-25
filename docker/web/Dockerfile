@@ -41,8 +41,8 @@ RUN locale-gen ja_JP.UTF-8
 
 EXPOSE 80 443
 
-WORKDIR /var/www/html
+WORKDIR /app
 
-RUN rm index.html
+COPY ./000-default.conf /etc/apache2/sites-available/000-default.conf
 
 CMD apachectl -D FOREGROUND 
