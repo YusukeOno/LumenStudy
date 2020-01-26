@@ -44,5 +44,6 @@ EXPOSE 80 443
 WORKDIR /app
 
 COPY ./000-default.conf /etc/apache2/sites-available/000-default.conf
+RUN /usr/sbin/a2enmod rewrite
 
 CMD apachectl -D FOREGROUND 
